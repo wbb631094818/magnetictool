@@ -25,7 +25,7 @@ class _DiyInputState extends State<DiyInput> {
     //读取剪切板
     Clipboard.getData(Clipboard.kTextPlain).then((value) => {
           if (value != null) {
-            _counter = "magnet:?xt=urn:btih:" + value.text!,
+            onTextChange(value.text!),
             _controller.text = value.text!
           }
         });
