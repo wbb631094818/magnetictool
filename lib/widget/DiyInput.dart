@@ -22,21 +22,31 @@ class _DiyInputState extends State<DiyInput> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    //读取剪切板
+    Clipboard.getData(Clipboard.kTextPlain).then((value) => {
+          if (value != null) {
+            _counter = "magnet:?xt=urn:btih:" + value.text!,
+            _controller.text = value.text!
+          }
+        });
   }
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return
-      Column(
+    return Column(
       children: [
-        Padding(padding: const EdgeInsets.only(top: 100,left: 16, right: 16),
-          child:Text(_counter) ,
+        Padding(
+          padding: const EdgeInsets.only(top: 100, left: 16, right: 16),
+          child: Text(_counter),
         ),
-        IconButton(onPressed: () {
-          //复制
-          Clipboard.setData(ClipboardData(text: _counter));
-        }, icon: Icon(Icons.copy)),
+        IconButton(
+            onPressed: () {
+              //复制
+              Clipboard.setData(ClipboardData(text: _counter));
+              SnackBar(content: Text(_counter));
+            },
+            icon: Icon(Icons.copy)),
         Padding(
           padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
           child: TextField(
@@ -64,8 +74,6 @@ class _DiyInputState extends State<DiyInput> {
   onTextChange(text) {
     print("输入改变时：" + text);
     this._counter = "magnet:?xt=urn:btih:" + text;
-    setState(() {
-
-    });
+    setState(() {});
   }
 }
