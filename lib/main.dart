@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:magnetictool/widget/DiyInput.dart';
+import 'package:magnetictool/widget/diyinput.dart';
 
 void main() {
   runApp(const MyApp());
@@ -79,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
-        child: DiyInput(),
+        child: diyinput(),
       ),
       // floatingActionButton: FloatingActionButton(
       //   onPressed: _incrementCounter,

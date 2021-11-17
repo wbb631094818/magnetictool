@@ -3,9 +3,10 @@ import 'package:flutter/services.dart';
 
 /**
  *  自定义输入框
+ *
  */
-class DiyInput extends StatefulWidget {
-  const DiyInput();
+class diyinput extends StatefulWidget {
+  const diyinput();
 
   @override
   State<StatefulWidget> createState() {
@@ -14,7 +15,7 @@ class DiyInput extends StatefulWidget {
   }
 }
 
-class _DiyInputState extends State<DiyInput> {
+class _DiyInputState extends State<diyinput> {
   String _counter = "";
   TextEditingController _controller = TextEditingController();
 
